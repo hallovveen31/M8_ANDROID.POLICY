@@ -21,10 +21,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 8215
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$ShowingShutdownAnimationReceiver;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -34,11 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Lcom/android/internal/policy/impl/PhoneWindowManager$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
 
-    .prologue
-    .line 8215
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/PhoneWindowManager$ShowingShutdownAnimationReceiver;-><init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
 
     return-void
@@ -48,25 +41,19 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .parameter "context"
-    .parameter "intent"
 
-    .prologue
     const/4 v2, 0x0
 
-    .line 8219
     sget-boolean v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_HTC:Z
 
     if-eqz v0, :cond_0
 
-    .line 8220
     const-string v0, "WindowManager"
 
     const-string v1, "ShowingShutdownAnimationReceiver - OnReceive()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8221
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$ShowingShutdownAnimationReceiver;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -74,16 +61,13 @@
 
     iput-boolean v1, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mShowingShutdownAnim:Z
 
-    .line 8223
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$ShowingShutdownAnimationReceiver;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iput-boolean v2, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHtcMode:Z
 
-    .line 8224
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$ShowingShutdownAnimationReceiver;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-virtual {v0, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateRotation(Z)V
 
-    .line 8233
     return-void
 .end method

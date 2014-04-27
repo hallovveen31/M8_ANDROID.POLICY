@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindow;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 4371
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindow$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,24 +36,19 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .parameter "v"
 
-    .prologue
-    .line 4373
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindow$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindow;->mCheckBox:Lcom/htc/widget/HtcCheckBox;
 
     if-eqz v0, :cond_0
 
-    .line 4374
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindow$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindow;->mCheckBox:Lcom/htc/widget/HtcCheckBox;
 
     invoke-virtual {v0}, Lcom/htc/widget/HtcCheckBox;->toggle()V
 
-    .line 4375
     :cond_0
     return-void
 .end method

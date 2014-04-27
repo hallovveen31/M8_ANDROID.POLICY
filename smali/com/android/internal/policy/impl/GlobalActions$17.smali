@@ -1,11 +1,11 @@
-.class Lcom/android/internal/policy/impl/GlobalActions$4;
+.class Lcom/android/internal/policy/impl/GlobalActions$17;
 .super Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;
 .source "GlobalActions.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/policy/impl/GlobalActions;->createDialog()Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;
+    value = Lcom/android/internal/policy/impl/GlobalActions;->createDialogAdv()Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;III)V
     .locals 0
 
-    iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+    iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$17;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0, p2, p3, p4}, Lcom/android/internal/policy/impl/GlobalActions$SinglePressAction;-><init>(III)V
 
@@ -32,21 +32,30 @@
 
 # virtual methods
 .method public onPress()V
-    .locals 2
+    .locals 3
 
     const-string v0, "ADVANCED POWER MENU"
 
-    const-string v1, "On Press Main Reboot begin"
+    const-string v1, "recovery begin"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
+    iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$17;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
-    invoke-virtual {v0}, Lcom/android/internal/policy/impl/GlobalActions;->showDialogAdv()V
+    #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/GlobalActions;->access$200(Lcom/android/internal/policy/impl/GlobalActions;)Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "recovery"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcom/htc/app/HtcShutdownThread;->reboot(Landroid/content/Context;Ljava/lang/String;Z)V
 
     const-string v0, "ADVANCED POWER MENU"
 
-    const-string v1, "On Press Main Reboot finish"
+    const-string v1, "recovery end"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 

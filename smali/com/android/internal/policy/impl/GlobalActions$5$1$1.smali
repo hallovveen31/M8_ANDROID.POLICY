@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions$5$1;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 491
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$5$1$1;->this$2:Lcom/android/internal/policy/impl/GlobalActions$5$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,8 +37,6 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 494
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -51,11 +46,9 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 498
     :goto_0
     return-void
 
-    .line 496
     :catch_0
     move-exception v0
 

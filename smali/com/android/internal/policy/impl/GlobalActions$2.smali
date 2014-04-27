@@ -21,16 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;IIIIIZ)V
     .locals 7
-    .parameter
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-    .parameter "x4"
-    .parameter "x5"
 
-    .prologue
-    .line 369
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     move-object v0, p0
@@ -56,19 +47,13 @@
 # virtual methods
 .method protected changeStateFromPress(Z)V
     .locals 0
-    .parameter "buttonOn"
 
-    .prologue
-    .line 379
     return-void
 .end method
 
 .method onToggle(Z)V
     .locals 3
-    .parameter "on"
 
-    .prologue
-    .line 372
     sget-boolean v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEBUG_flag:Z
 
     if-eqz v0, :cond_0
@@ -95,22 +80,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 373
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$2;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #calls: Lcom/android/internal/policy/impl/GlobalActions;->confirmKidMode(Z)V
     invoke-static {v0, p1}, Lcom/android/internal/policy/impl/GlobalActions;->access$700(Lcom/android/internal/policy/impl/GlobalActions;Z)V
 
-    .line 374
     return-void
 .end method
 
 .method public showBeforeProvisioning()Z
     .locals 1
 
-    .prologue
-    .line 386
     const/4 v0, 0x0
 
     return v0
@@ -119,8 +100,6 @@
 .method public showDuringKeyguard()Z
     .locals 1
 
-    .prologue
-    .line 382
     const/4 v0, 0x1
 
     return v0

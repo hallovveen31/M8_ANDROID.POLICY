@@ -32,10 +32,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/internal/policy/impl/HtcPolicyUtils$LogKeyCodeHandle;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 122
     iput-object p1, p0, Lcom/android/internal/policy/impl/HtcPolicyUtils$LogKeyCodeHandle$UploadKeyEventTask;->this$1:Lcom/android/internal/policy/impl/HtcPolicyUtils$LogKeyCodeHandle;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -47,12 +44,9 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/String;)Ljava/lang/Boolean;
     .locals 5
-    .parameter "data"
 
-    .prologue
     const/4 v4, 0x0
 
-    .line 126
     aget-object v1, p1, v4
 
     if-eqz v1, :cond_0
@@ -65,17 +59,14 @@
 
     if-gtz v1, :cond_1
 
-    .line 127
     :cond_0
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    .line 137
     :goto_0
     return-object v1
 
-    .line 129
     :cond_1
     const-string v1, "HtcPolicyUtils"
 
@@ -101,13 +92,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 130
     invoke-static {}, Lcom/htc/utils/ulog/ReusableULogData;->obtain()Lcom/htc/utils/ulog/ReusableULogData;
 
     move-result-object v0
 
-    .line 131
-    .local v0, uLogData:Lcom/htc/utils/ulog/ReusableULogData;
     const-string v1, "system_server"
 
     invoke-virtual {v0, v1}, Lcom/htc/utils/ulog/ReusableULogData;->setAppId(Ljava/lang/String;)Lcom/htc/utils/ulog/ULogDataWritable;
@@ -126,13 +114,10 @@
 
     invoke-interface {v1, v2, v3}, Lcom/htc/utils/ulog/ULogDataWritable;->addData(Ljava/lang/String;Ljava/lang/String;)Lcom/htc/utils/ulog/ULogDataWritable;
 
-    .line 135
     invoke-static {v0}, Lcom/htc/utils/ulog/ULog;->log(Lcom/htc/utils/ulog/ULogData;)V
 
-    .line 136
     invoke-virtual {v0}, Lcom/htc/utils/ulog/ReusableULogData;->recycle()V
 
-    .line 137
     const/4 v1, 0x1
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -144,13 +129,9 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .parameter "x0"
 
-    .prologue
-    .line 122
     check-cast p1, [Ljava/lang/String;
 
-    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/HtcPolicyUtils$LogKeyCodeHandle$UploadKeyEventTask;->doInBackground([Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0

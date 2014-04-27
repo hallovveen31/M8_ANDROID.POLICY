@@ -24,10 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 432
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PointerLocationPointerEventListener;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,11 +34,7 @@
 
 .method synthetic constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Lcom/android/internal/policy/impl/PhoneWindowManager$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
 
-    .prologue
-    .line 432
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/PhoneWindowManager$PointerLocationPointerEventListener;-><init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
 
     return-void
@@ -51,24 +44,19 @@
 # virtual methods
 .method public onPointerEvent(Landroid/view/MotionEvent;)V
     .locals 1
-    .parameter "motionEvent"
 
-    .prologue
-    .line 435
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PointerLocationPointerEventListener;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPointerLocationView:Lcom/android/internal/widget/PointerLocationView;
 
     if-eqz v0, :cond_0
 
-    .line 436
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PointerLocationPointerEventListener;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPointerLocationView:Lcom/android/internal/widget/PointerLocationView;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/PointerLocationView;->addPointerEvent(Landroid/view/MotionEvent;)V
 
-    .line 438
     :cond_0
     return-void
 .end method

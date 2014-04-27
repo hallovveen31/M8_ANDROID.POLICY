@@ -26,19 +26,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Intent;)V
     .locals 3
-    .parameter
-    .parameter "intent"
 
-    .prologue
-    .line 7192
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$LaunchActivityRunnable;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7193
     iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$LaunchActivityRunnable;->mIntent:Landroid/content/Intent;
 
-    .line 7194
     const-string v0, "InputDispatcher"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -67,7 +61,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7195
     return-void
 .end method
 
@@ -76,8 +69,6 @@
 .method public run()V
     .locals 4
 
-    .prologue
-    .line 7200
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$LaunchActivityRunnable;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -91,16 +82,12 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 7205
     :goto_0
     return-void
 
-    .line 7201
     :catch_0
     move-exception v0
 
-    .line 7202
-    .local v0, ex:Landroid/content/ActivityNotFoundException;
     const-string v1, "InputDispatcher"
 
     const-string v2, "LaunchActivityRunnable"

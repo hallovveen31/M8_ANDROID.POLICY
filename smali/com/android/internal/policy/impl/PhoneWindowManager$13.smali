@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 5067
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$13;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,8 +37,6 @@
 .method public run()V
     .locals 2
 
-    .prologue
-    .line 5070
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$13;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardDelegate:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
@@ -50,6 +45,5 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;->showKeyguard(Z)V
 
-    .line 5071
     return-void
 .end method

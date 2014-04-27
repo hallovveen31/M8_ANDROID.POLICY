@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 8126
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$31;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +37,8 @@
 .method public run()V
     .locals 1
 
-    .prologue
-    .line 8128
     monitor-enter p0
 
-    .line 8129
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$31;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -52,13 +46,10 @@
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;->setLastUserActivity()V
 
-    .line 8130
     monitor-exit p0
 
-    .line 8131
     return-void
 
-    .line 8130
     :catchall_0
     move-exception v0
 

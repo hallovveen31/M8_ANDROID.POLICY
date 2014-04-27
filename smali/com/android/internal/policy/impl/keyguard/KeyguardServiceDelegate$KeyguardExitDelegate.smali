@@ -23,19 +23,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;Landroid/view/WindowManagerPolicy$OnKeyguardExitResult;)V
     .locals 0
-    .parameter
-    .parameter "onKeyguardExitResult"
 
-    .prologue
-    .line 95
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate$KeyguardExitDelegate;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate;
 
     invoke-direct {p0}, Lcom/android/internal/policy/IKeyguardExitCallback$Stub;-><init>()V
 
-    .line 96
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate$KeyguardExitDelegate;->mOnKeyguardExitResult:Landroid/view/WindowManagerPolicy$OnKeyguardExitResult;
 
-    .line 97
     return-void
 .end method
 
@@ -43,15 +37,12 @@
 # virtual methods
 .method public onKeyguardExitResult(Z)V
     .locals 3
-    .parameter "success"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
         }
     .end annotation
 
-    .prologue
-    .line 101
     const-string v0, "KeyguardServiceDelegate"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -80,17 +71,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate$KeyguardExitDelegate;->mOnKeyguardExitResult:Landroid/view/WindowManagerPolicy$OnKeyguardExitResult;
 
     if-eqz v0, :cond_0
 
-    .line 103
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardServiceDelegate$KeyguardExitDelegate;->mOnKeyguardExitResult:Landroid/view/WindowManagerPolicy$OnKeyguardExitResult;
 
     invoke-interface {v0, p1}, Landroid/view/WindowManagerPolicy$OnKeyguardExitResult;->onKeyguardExitResult(Z)V
 
-    .line 105
     :cond_0
     return-void
 .end method

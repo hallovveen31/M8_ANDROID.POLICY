@@ -28,8 +28,6 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .prologue
-    .line 20
     sget-boolean v0, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEBUG_flag:Z
 
     sput-boolean v0, Lcom/android/internal/policy/impl/HtcPolicyUtils;->DEBUG_ON:Z
@@ -40,26 +38,20 @@
 .method constructor <init>()V
     .locals 1
 
-    .prologue
-    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
     new-instance v0, Lcom/android/internal/policy/impl/HtcPolicyUtils$LogKeyCodeHandle;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/HtcPolicyUtils$LogKeyCodeHandle;-><init>(Lcom/android/internal/policy/impl/HtcPolicyUtils;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/HtcPolicyUtils;->logKeyCodeHandle:Lcom/android/internal/policy/impl/HtcPolicyUtils$LogKeyCodeHandle;
 
-    .line 28
     return-void
 .end method
 
 .method static synthetic access$000()Z
     .locals 1
 
-    .prologue
-    .line 17
     sget-boolean v0, Lcom/android/internal/policy/impl/HtcPolicyUtils;->DEBUG_ON:Z
 
     return v0

@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/GlobalActions;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 1292
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -36,21 +33,15 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 8
-    .parameter "context"
-    .parameter "intent"
 
-    .prologue
     const/4 v1, 0x1
 
     const/4 v4, 0x0
 
-    .line 1294
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1295
-    .local v0, action:Ljava/lang/String;
     sget-boolean v5, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEBUG_flag:Z
 
     if-eqz v5, :cond_0
@@ -77,7 +68,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1296
     :cond_0
     const-string v5, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
@@ -95,7 +85,6 @@
 
     if-eqz v5, :cond_3
 
-    .line 1298
     :cond_1
     const-string v5, "reason"
 
@@ -103,8 +92,6 @@
 
     move-result-object v2
 
-    .line 1299
-    .local v2, reason:Ljava/lang/String;
     const-string v5, "globalactions"
 
     invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -113,7 +100,6 @@
 
     if-nez v5, :cond_2
 
-    .line 1300
     iget-object v5, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mHandler:Landroid/os/Handler;
@@ -123,13 +109,10 @@
 
     invoke-virtual {v5, v4}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 1341
-    .end local v2           #reason:Ljava/lang/String;
     :cond_2
     :goto_0
     return-void
 
-    .line 1302
     :cond_3
     const-string v5, "android.intent.action.EMERGENCY_CALLBACK_MODE_CHANGED"
 
@@ -139,7 +122,6 @@
 
     if-eqz v5, :cond_4
 
-    .line 1305
     const-string v5, "PHONE_IN_ECM_STATE"
 
     invoke-virtual {p2, v5, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -157,13 +139,11 @@
 
     if-eqz v5, :cond_2
 
-    .line 1307
     iget-object v5, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mIsWaitingForEcmExit:Z
     invoke-static {v5, v4}, Lcom/android/internal/policy/impl/GlobalActions;->access$102(Lcom/android/internal/policy/impl/GlobalActions;Z)Z
 
-    .line 1308
     iget-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #calls: Lcom/android/internal/policy/impl/GlobalActions;->changeAirplaneModeSystemSetting(Z)V
@@ -171,7 +151,6 @@
 
     goto :goto_0
 
-    .line 1311
     :cond_4
     const-string v5, "android.intent.action.SIM_STATE_CHANGED"
 
@@ -181,15 +160,12 @@
 
     if-eqz v5, :cond_6
 
-    .line 1312
     const-string v5, "ss"
 
     invoke-virtual {p2, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1314
-    .local v3, stateExtra:Ljava/lang/String;
     const-string v5, "READY"
 
     invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -198,7 +174,6 @@
 
     if-eqz v5, :cond_5
 
-    .line 1315
     iget-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mSimReady:Z
@@ -206,7 +181,6 @@
 
     goto :goto_0
 
-    .line 1317
     :cond_5
     iget-object v5, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
@@ -215,8 +189,6 @@
 
     goto :goto_0
 
-    .line 1322
-    .end local v3           #stateExtra:Ljava/lang/String;
     :cond_6
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -234,7 +206,6 @@
 
     if-eqz v5, :cond_9
 
-    .line 1323
     iget-object v5, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-static {}, Lcom/android/internal/policy/impl/GlobalActions;->access$1800()Ljava/lang/String;
@@ -248,7 +219,6 @@
     #setter for: Lcom/android/internal/policy/impl/GlobalActions;->imsRegistered:Z
     invoke-static {v5, v6}, Lcom/android/internal/policy/impl/GlobalActions;->access$502(Lcom/android/internal/policy/impl/GlobalActions;Z)Z
 
-    .line 1324
     const-string v5, "GlobalActions"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -278,7 +248,6 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1325
     iget-object v5, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->imsRegistered:Z
@@ -288,7 +257,6 @@
 
     if-eqz v5, :cond_2
 
-    .line 1326
     iget-object v5, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mContext:Landroid/content/Context;
@@ -308,8 +276,6 @@
 
     if-ne v5, v1, :cond_7
 
-    .line 1328
-    .local v1, inAirplaneMode:Z
     :goto_1
     iget-object v5, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
@@ -321,7 +287,6 @@
     #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mAirplaneState:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
     invoke-static {v5, v4}, Lcom/android/internal/policy/impl/GlobalActions;->access$602(Lcom/android/internal/policy/impl/GlobalActions;Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;)Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
-    .line 1329
     iget-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAirplaneModeOn:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;
@@ -331,7 +296,6 @@
 
     if-eqz v4, :cond_2
 
-    .line 1330
     const-string v4, "GlobalActions"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -361,7 +325,6 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1331
     iget-object v4, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #getter for: Lcom/android/internal/policy/impl/GlobalActions;->mAirplaneModeOn:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction;
@@ -380,22 +343,16 @@
 
     goto/16 :goto_0
 
-    .end local v1           #inAirplaneMode:Z
     :cond_7
     move v1, v4
 
-    .line 1326
     goto :goto_1
 
-    .line 1328
-    .restart local v1       #inAirplaneMode:Z
     :cond_8
     sget-object v4, Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;->Off:Lcom/android/internal/policy/impl/GlobalActions$ToggleAction$State;
 
     goto :goto_2
 
-    .line 1337
-    .end local v1           #inAirplaneMode:Z
     :cond_9
     const-string v5, "com.htc.intent.action.QUICKBOOT_POWEROFF"
 
@@ -405,7 +362,6 @@
 
     if-eqz v5, :cond_2
 
-    .line 1338
     iget-object v5, p0, Lcom/android/internal/policy/impl/GlobalActions$8;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     #setter for: Lcom/android/internal/policy/impl/GlobalActions;->mBlockObserver:Z

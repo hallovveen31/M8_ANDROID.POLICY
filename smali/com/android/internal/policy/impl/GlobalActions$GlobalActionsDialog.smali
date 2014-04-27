@@ -32,17 +32,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/htc/app/HtcAlertController$AlertParams;)V
     .locals 1
-    .parameter "context"
-    .parameter "params"
 
-    .prologue
-    .line 1503
     invoke-direct {p0, p1}, Lcom/htc/widget/HtcAlertDialog;-><init>(Landroid/content/Context;)V
 
-    .line 1504
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mContext:Landroid/content/Context;
 
-    .line 1505
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -53,12 +47,10 @@
 
     iput v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mWindowTouchSlop:I
 
-    .line 1506
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mAlert:Lcom/htc/app/HtcAlertController;
 
     invoke-virtual {p2, v0}, Lcom/htc/app/HtcAlertController$AlertParams;->apply(Lcom/htc/app/HtcAlertController;)V
 
-    .line 1507
     return-void
 .end method
 
@@ -66,28 +58,21 @@
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 14
-    .parameter "event"
 
-    .prologue
     const/4 v13, 0x1
 
     const/4 v12, 0x0
 
-    .line 1535
     iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mEnableAccessibilityController:Lcom/android/internal/policy/impl/EnableAccessibilityController;
 
     if-eqz v2, :cond_5
 
-    .line 1536
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v8
 
-    .line 1537
-    .local v8, action:I
     if-nez v8, :cond_1
 
-    .line 1538
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
@@ -96,24 +81,18 @@
 
     move-result-object v9
 
-    .line 1539
-    .local v9, decor:Landroid/view/View;
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
 
     float-to-int v10, v2
 
-    .line 1540
-    .local v10, eventX:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     float-to-int v11, v2
 
-    .line 1541
-    .local v11, eventY:I
     iget v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mWindowTouchSlop:I
 
     neg-int v2, v2
@@ -146,21 +125,15 @@
 
     if-lt v11, v2, :cond_1
 
-    .line 1545
     :cond_0
     iput-boolean v13, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
 
-    .line 1549
-    .end local v9           #decor:Landroid/view/View;
-    .end local v10           #eventX:I
-    .end local v11           #eventY:I
     :cond_1
     :try_start_0
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mIntercepted:Z
 
     if-nez v2, :cond_7
 
-    .line 1550
     iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mEnableAccessibilityController:Lcom/android/internal/policy/impl/EnableAccessibilityController;
 
     invoke-virtual {v2, p1}, Lcom/android/internal/policy/impl/EnableAccessibilityController;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
@@ -169,12 +142,10 @@
 
     iput-boolean v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mIntercepted:Z
 
-    .line 1551
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mIntercepted:Z
 
     if-eqz v2, :cond_3
 
-    .line 1554
     sget-boolean v2, Lcom/htc/htcjavaflag/HtcBuildFlag;->Htc_DEBUG_flag:Z
 
     if-eqz v2, :cond_2
@@ -185,14 +156,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1557
     :cond_2
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 1558
-    .local v0, now:J
     const/4 v4, 0x3
 
     const/4 v5, 0x0
@@ -207,40 +175,30 @@
 
     move-result-object p1
 
-    .line 1560
     const/16 v2, 0x1002
 
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->setSource(I)V
 
-    .line 1561
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1567
-    .end local v0           #now:J
     :cond_3
     if-ne v8, v13, :cond_5
 
-    .line 1568
     iget-boolean v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
 
     if-eqz v2, :cond_4
 
-    .line 1569
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->cancel()V
 
-    .line 1571
     :cond_4
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
 
-    .line 1572
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mIntercepted:Z
 
-    .line 1576
-    .end local v8           #action:I
     :cond_5
     invoke-super {p0, p1}, Lcom/htc/widget/HtcAlertDialog;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -250,8 +208,6 @@
     :goto_0
     return v2
 
-    .line 1564
-    .restart local v8       #action:I
     :cond_7
     :try_start_1
     iget-object v2, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mEnableAccessibilityController:Lcom/android/internal/policy/impl/EnableAccessibilityController;
@@ -262,45 +218,35 @@
 
     move-result v2
 
-    .line 1567
     if-ne v8, v13, :cond_6
 
-    .line 1568
     iget-boolean v3, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
 
     if-eqz v3, :cond_8
 
-    .line 1569
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->cancel()V
 
-    .line 1571
     :cond_8
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
 
-    .line 1572
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mIntercepted:Z
 
     goto :goto_0
 
-    .line 1567
     :catchall_0
     move-exception v2
 
     if-ne v8, v13, :cond_a
 
-    .line 1568
     iget-boolean v3, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
 
     if-eqz v3, :cond_9
 
-    .line 1569
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->cancel()V
 
-    .line 1571
     :cond_9
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mCancelOnUp:Z
 
-    .line 1572
     iput-boolean v12, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mIntercepted:Z
 
     :cond_a
@@ -310,8 +256,6 @@
 .method public getListView()Landroid/widget/ListView;
     .locals 1
 
-    .prologue
-    .line 1580
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mAlert:Lcom/htc/app/HtcAlertController;
 
     invoke-virtual {v0}, Lcom/htc/app/HtcAlertController;->getListView()Landroid/widget/ListView;
@@ -323,11 +267,7 @@
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 1
-    .parameter "keyCode"
-    .parameter "event"
 
-    .prologue
-    .line 1585
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mAlert:Lcom/htc/app/HtcAlertController;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/app/HtcAlertController;->onKeyDown(ILandroid/view/KeyEvent;)Z
@@ -336,10 +276,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 1586
     const/4 v0, 0x1
 
-    .line 1588
     :goto_0
     return v0
 
@@ -353,11 +291,7 @@
 
 .method public onKeyUp(ILandroid/view/KeyEvent;)Z
     .locals 1
-    .parameter "keyCode"
-    .parameter "event"
 
-    .prologue
-    .line 1593
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mAlert:Lcom/htc/app/HtcAlertController;
 
     invoke-virtual {v0, p1, p2}, Lcom/htc/app/HtcAlertController;->onKeyUp(ILandroid/view/KeyEvent;)Z
@@ -366,10 +300,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 1594
     const/4 v0, 0x1
 
-    .line 1596
     :goto_0
     return v0
 
@@ -384,8 +316,6 @@
 .method protected onStart()V
     .locals 2
 
-    .prologue
-    .line 1515
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/internal/policy/impl/EnableAccessibilityController;->canEnableAccessibilityViaGesture(Landroid/content/Context;)Z
@@ -394,7 +324,6 @@
 
     if-eqz v0, :cond_0
 
-    .line 1516
     new-instance v0, Lcom/android/internal/policy/impl/EnableAccessibilityController;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mContext:Landroid/content/Context;
@@ -403,25 +332,20 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mEnableAccessibilityController:Lcom/android/internal/policy/impl/EnableAccessibilityController;
 
-    .line 1517
     const/4 v0, 0x0
 
     invoke-super {p0, v0}, Lcom/htc/widget/HtcAlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 1522
     :goto_0
     invoke-super {p0}, Lcom/htc/widget/HtcAlertDialog;->onStart()V
 
-    .line 1523
     return-void
 
-    .line 1519
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mEnableAccessibilityController:Lcom/android/internal/policy/impl/EnableAccessibilityController;
 
-    .line 1520
     const/4 v0, 0x1
 
     invoke-super {p0, v0}, Lcom/htc/widget/HtcAlertDialog;->setCanceledOnTouchOutside(Z)V
@@ -432,21 +356,16 @@
 .method protected onStop()V
     .locals 1
 
-    .prologue
-    .line 1527
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mEnableAccessibilityController:Lcom/android/internal/policy/impl/EnableAccessibilityController;
 
     if-eqz v0, :cond_0
 
-    .line 1528
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$GlobalActionsDialog;->mEnableAccessibilityController:Lcom/android/internal/policy/impl/EnableAccessibilityController;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/EnableAccessibilityController;->onDestroy()V
 
-    .line 1530
     :cond_0
     invoke-super {p0}, Lcom/htc/widget/HtcAlertDialog;->onStop()V
 
-    .line 1531
     return-void
 .end method

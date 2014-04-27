@@ -26,19 +26,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/WindowManagerPolicy$WindowState;)V
     .locals 0
-    .parameter
-    .parameter "win"
 
-    .prologue
-    .line 7935
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$HandleRecentAppsRunnable;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7936
     iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$HandleRecentAppsRunnable;->mWin:Landroid/view/WindowManagerPolicy$WindowState;
 
-    .line 7937
     return-void
 .end method
 
@@ -47,8 +41,6 @@
 .method public run()V
     .locals 3
 
-    .prologue
-    .line 7941
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$HandleRecentAppsRunnable;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     #getter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mAutoMotiveEnabled:Z
@@ -58,15 +50,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 7942
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.htc.AutoMotive.Service.RecentKey"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 7943
-    .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$HandleRecentAppsRunnable;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
@@ -75,12 +64,9 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 7948
-    .end local v0           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 7946
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$HandleRecentAppsRunnable;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 

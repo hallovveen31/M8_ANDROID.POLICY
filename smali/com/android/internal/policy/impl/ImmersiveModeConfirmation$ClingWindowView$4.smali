@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$ClingWindowView;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 275
     iput-object p1, p0, Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$ClingWindowView$4;->this$1:Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$ClingWindowView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,10 +36,7 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
-    .parameter "animation"
 
-    .prologue
-    .line 278
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -53,8 +47,6 @@
 
     move-result v0
 
-    .line 279
-    .local v0, c:I
     iget-object v1, p0, Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$ClingWindowView$4;->this$1:Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$ClingWindowView;
 
     #getter for: Lcom/android/internal/policy/impl/ImmersiveModeConfirmation$ClingWindowView;->mColor:Landroid/graphics/drawable/ColorDrawable;
@@ -64,6 +56,5 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/ColorDrawable;->setColor(I)V
 
-    .line 280
     return-void
 .end method

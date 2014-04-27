@@ -21,10 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 8028
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -36,13 +33,9 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
-    .parameter "context"
-    .parameter "intent"
 
-    .prologue
     const/4 v4, 0x1
 
-    .line 8031
     const-string v1, "com.htc.MIRROR_DISPLAY_STATE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -55,32 +48,26 @@
 
     if-eqz v1, :cond_1
 
-    .line 8032
     const-string v1, "mirror_display_state"
 
     invoke-virtual {p2, v1, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 8034
-    .local v0, mirrorstatus:I
     const/4 v1, 0x3
 
     if-ne v0, v1, :cond_2
 
-    .line 8035
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iput-boolean v4, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mMirrorMode:Z
 
-    .line 8038
     :cond_0
     :goto_0
     sget-boolean v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->DEBUG_HTC:Z
 
     if-eqz v1, :cond_1
 
-    .line 8039
     const-string v1, "WindowManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -117,14 +104,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 8041
-    .end local v0           #mirrorstatus:I
     :cond_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-virtual {v1, v4}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateRotation(Z)V
 
-    .line 8042
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     #getter for: Lcom/android/internal/policy/impl/PhoneWindowManager;->mLock:Ljava/lang/Object;
@@ -134,26 +118,20 @@
 
     monitor-enter v2
 
-    .line 8043
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->updateOrientationListenerLp()V
 
-    .line 8044
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 8045
     return-void
 
-    .line 8036
-    .restart local v0       #mirrorstatus:I
     :cond_2
     if-ne v0, v4, :cond_0
 
-    .line 8037
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$28;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v2, 0x0
@@ -162,8 +140,6 @@
 
     goto :goto_0
 
-    .line 8044
-    .end local v0           #mirrorstatus:I
     :catchall_0
     move-exception v1
 

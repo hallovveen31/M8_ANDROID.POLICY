@@ -24,10 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindow;)V
     .locals 0
-    .parameter
 
-    .prologue
-    .line 4390
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindow$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +36,7 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .parameter "arg0"
-    .parameter "arg1"
 
-    .prologue
-    .line 4393
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/PhoneWindow;->mCheckBox:Lcom/htc/widget/HtcCheckBox;
@@ -60,18 +53,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 4395
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 4396
-    .local v0, intent:Landroid/content/Intent;
     const-string v1, "android.intent.action.NEVER_SHOW_MENU"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 4397
     const-string v1, "neverShow"
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindow$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
@@ -84,7 +73,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 4398
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/PhoneWindow;->getContext()Landroid/content/Context;
@@ -93,8 +81,6 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 4401
-    .end local v0           #intent:Landroid/content/Intent;
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindow$5;->this$0:Lcom/android/internal/policy/impl/PhoneWindow;
 
@@ -102,6 +88,5 @@
 
     iput-object v2, v1, Lcom/android/internal/policy/impl/PhoneWindow;->mCheckBox:Lcom/htc/widget/HtcCheckBox;
 
-    .line 4402
     return-void
 .end method
